@@ -1,5 +1,4 @@
-
-function createDogListItem(dog){
+function createDogListItem(dog) {
   const li = document.createElement("li");
   const dogContainer = document.querySelector(".main");
 
@@ -13,15 +12,15 @@ function createDogListItem(dog){
   //the dog variable as a parameter. You will
   //also need to remove any existing dog card
   //from the dogContainer
- 
+
   return li;
-};
+}
 
 function createSection() {
   const section = document.createElement("section");
   section.className = "main__dog-section";
   return section;
-};
+}
 
 const createDogCardDesc = (bio) => {
   const div = document.createElement("div");
@@ -50,7 +49,7 @@ function createDogCardBottomSection(dog) {
 
   div.append(text, button);
   return div;
-};
+}
 
 const createDogCard = (dog) => {
   const section = createSection();
@@ -59,9 +58,9 @@ const createDogCard = (dog) => {
 
   // (3)
   //TODO: Update this section to create a new image
-  //element and add it to the dog card. Set the source of 
+  //element and add it to the dog card. Set the source of
   //the image to the image path on the dog object
-  
+
   const desc = createDogCardDesc(dog.bio);
   const bottomSection = createDogCardBottomSection(dog);
 
@@ -101,7 +100,7 @@ function createForm() {
     submitInput
   );
   return form;
-};
+}
 
 function createInput(idName, type = "text", value) {
   let input = null;
@@ -128,7 +127,7 @@ function createLabel(forAttr, text) {
   label.innerText = text;
 
   return label;
-};
+}
 
 function renderMainForm() {
   const section = createSection();
@@ -140,7 +139,7 @@ function renderMainForm() {
   section.append(h2, form);
 
   return section;
-};
+}
 
 function renderDogList(dogsArr) {
   const listContainer = document.querySelector(".dogs-list");
@@ -148,7 +147,7 @@ function renderDogList(dogsArr) {
     const item = createDogListItem(dog);
     listContainer.append(item);
   }
-};
+}
 
 renderDogList(data);
 
@@ -159,5 +158,5 @@ const dogContainer = document.querySelector(".main");
 //TODO: Add an event listener on to form button so that
 //when the user clicks the button, the form is displayed.
 //the renderMainForm method will return an element that
-//contains the form, so you only need to add it to the 
+//contains the form, so you only need to add it to the
 //dogContainer and remove any existing children.
